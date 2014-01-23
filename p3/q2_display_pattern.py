@@ -1,25 +1,20 @@
-def display_pattern(n):
-    lst=[]
+def build_list(n):
     lst_last=[]
     for p in range(1,n+1):
         p=str(p)
         lst_last.append(p)
     lst_last.reverse()
-    last=" ".join(lst_last)
-    k=len(last)
+    return lst_last
 
-    
-    for i in range(1,n+1):
-        for j in range(1,i+1):
-            j=str(j)
-            lst.append(j)
-        lst.reverse()
-        " ".join(lst)
-        print "{0:>20s}".format(lst)
-        lst=[]
+def display_pattern(m):
+    for i in range(1,m+1):
+        l_i = build_list(X)
+        for item in l_i:
+            if int(item) > i:
+                l_i[l_i.index(item)] = " "*len(item)
+        last=" ".join(l_i)
+        print last
 
+X = int(input("Enter a number: "))
 
-
-
-n = input("Enter a number: ")
-display_pattern(n)
+display_pattern(X)
