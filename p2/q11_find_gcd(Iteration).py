@@ -18,4 +18,4 @@ gcd = gcd(n1, n2)
 print gcd
 
 # This method might be more efficient than the suggested method, especially when dealing with huge numbers!
-# However, it fails on some easy values such as gcd(2512,2).
+# However, it fails when n1 and n2 are too far away, such as gcd(2512,2). 
