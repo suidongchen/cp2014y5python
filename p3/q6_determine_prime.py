@@ -1,3 +1,4 @@
+from __future__ import print_function
 import math
 
 def is_prime(x):
@@ -25,7 +26,5 @@ for i in range(1,10000):
 
 for k in range(0,100):
     for n in range(0,10):
-        print str(lst[k*10+n])+" "*(4-len(str(lst[k*10+n]))),
-    print 
-
-# I increased the distance between two consecutive prime numbers by 1*" " so that the numbers will not stick together.
+        print(str(lst[k*10+n])+" "*(4-len(str(lst[k*10+n]))), end='')
+    print()
