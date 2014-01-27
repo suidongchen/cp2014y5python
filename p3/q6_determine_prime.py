@@ -26,5 +26,5 @@ for i in range(1,10000):
 
 for k in range(0,100):
     for n in range(0,10):
-        print(str(lst[k*10+n])+" "*(4-len(str(lst[k*10+n]))), end='')
+        print("{0:4s}".format(str(lst[k*10+n])), end='')
     print()
