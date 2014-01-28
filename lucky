@@ -1,6 +1,6 @@
 import random
 
-name_list=[
+rawname_list=[
 'ang.cunrong.kleon@dhs.sg',
 'ang.junming@dhs.sg',
 'ang.sweechow@dhs.sg',
@@ -9,9 +9,9 @@ name_list=[
 'chong.jiale.nicholas@dhs.sg',
 'chong.jiamin.desirae@dhs.sg',
 'chua.yiqi@dhs.sg',
-'2oo.lexian.2elicia@dhs.sg',
+'foo.lexian.felicia@dhs.sg',
 'gn.jingwen.bellerie@dhs.sg',
-'goh.jiayingm@dhs.sg',
+'goh.jiaying1@dhs.sg',
 'kou.yongkang@dhs.sg',
 'lee.wenhao.damien@dhs.sg',
 'li.jinjie@dhs.sg',
@@ -20,12 +20,18 @@ name_list=[
 'lim.tjionghann@dhs.sg',
 'loi.xinyi.audrey@dhs.sg',
 'ng.cheryl@dhs.sg',
+'ng.xingyu@dhs.sg',
+'ng.xingyu@dhs.sg',
+'ng.xingyu@dhs.sg',
+'ng.xingyu@dhs.sg',
 'quek.jiaqi@dhs.sg',
 'shi.changxiao@dhs.sg',
 'tan.chuan@dhs.sg',
 'tan.meizi.sherene@dhs.sg',
+'tan.meizi.sherene@dhs.sg',
 'wong.jieyu.jade@dhs.sg',
 'yan.hongyao.alvin@dhs.sg',
+'zeng.jin@dhs.sg',
 'zeng.jin@dhs.sg',
 'zhu.siyi@dhs.sg']
 
@@ -58,6 +64,7 @@ gender_list=[
 1,
 2,
 2]
+# I used 'replace all' to replace M with 1 and F with 2.
 
 bonus_list=[
 1,
@@ -88,6 +95,11 @@ bonus_list=[
 1,
 1]
 
+for name in rawname_list:
+    if rawname_list.count(name)>=2:
+        for i in range(1,rawname_list.count(name)):
+            rawname_list.remove(name)
+
 chance_list=[0 for i in range(28)]
 
 for i in range(28):
@@ -96,14 +108,22 @@ for i in range(28):
     else:
         chance_list[i]=2
 
-for i in range(28):
-    if chance_list[i]==2:
-        name_list.append(name_list[i])
+for j in range(28):
+    if chance_list[j]==2:
+        rawname_list.append(rawname_list[j])
 
-lucky = random.randint(0,len(name_list))
+count = 1
+lucky_list=[]
 
-luckyone = name_list[lucky]
+while count <= 3:
+    lucky = random.randint(0,len(rawname_list)-1)
+    lucky_list.append(rawname_list[lucky])
+    count += 1
+    if lucky_list.count(rawname_list[lucky])>=2:
+        count -= 1
 
-print luckyone
 
+
+for items in lucky_list:
+    print items
 
