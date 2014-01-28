@@ -1,0 +1,109 @@
+import random
+
+name_list=[
+'ang.cunrong.kleon@dhs.sg',
+'ang.junming@dhs.sg',
+'ang.sweechow@dhs.sg',
+'au.jiaying@dhs.sg',
+'chin.yongchen@dhs.sg',
+'chong.jiale.nicholas@dhs.sg',
+'chong.jiamin.desirae@dhs.sg',
+'chua.yiqi@dhs.sg',
+'2oo.lexian.2elicia@dhs.sg',
+'gn.jingwen.bellerie@dhs.sg',
+'goh.jiayingm@dhs.sg',
+'kou.yongkang@dhs.sg',
+'lee.wenhao.damien@dhs.sg',
+'li.jinjie@dhs.sg',
+'lim.kaixin.sheena@dhs.sg',
+'lim.mingmin.michelle@dhs.sg',
+'lim.tjionghann@dhs.sg',
+'loi.xinyi.audrey@dhs.sg',
+'ng.cheryl@dhs.sg',
+'quek.jiaqi@dhs.sg',
+'shi.changxiao@dhs.sg',
+'tan.chuan@dhs.sg',
+'tan.meizi.sherene@dhs.sg',
+'wong.jieyu.jade@dhs.sg',
+'yan.hongyao.alvin@dhs.sg',
+'zeng.jin@dhs.sg',
+'zhu.siyi@dhs.sg']
+
+gender_list=[
+1,
+1,
+1,
+2,
+1,
+1,
+2,
+2,
+2,
+2,
+2,
+1,
+1,
+2,
+2,
+2,
+2,
+2,
+2,
+1,
+2,
+2,
+1,
+2,
+2,
+1,
+2,
+2]
+
+bonus_list=[
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+2,
+1,
+2,
+2,
+2,
+1,
+1,
+1,
+1,
+1,
+2,
+1,
+1,
+2,
+1,
+1,
+2,
+1,
+1]
+
+chance_list=[0 for i in range(28)]
+
+for i in range(28):
+    if gender_list[i]==1 and bonus_list[i]==1:
+        chance_list[i]=1
+    else:
+        chance_list[i]=2
+
+for i in range(28):
+    if chance_list[i]==2:
+        name_list.append(name_list[i])
+
+lucky = random.randint(0,len(name_list))
+
+luckyone = name_list[lucky]
+
+print luckyone
+
+
