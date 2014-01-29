@@ -121,6 +121,7 @@ while count <= 3:
     count += 1
     if lucky_list.count(rawname_list[lucky])>=2:
         count -= 1
+        lucky_list.remove(rawname_list[lucky])
 
 
 
